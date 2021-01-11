@@ -47,7 +47,7 @@ function auth(req, res, next) {
 
   const auth = Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
   const user = auth[0];
-  constpass = auth[1];
+  const pass = auth[1];
   if (user === 'admin' && pass === 'password') {
     return next(); // authorized
   }else {
