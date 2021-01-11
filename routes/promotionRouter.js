@@ -71,4 +71,4 @@ promotionRouter.route('/:promotionId')
     .catch(err => next(err));
 });
 
-module.exports = promotionRouter;git c
+module.exports = promotionRouter;
