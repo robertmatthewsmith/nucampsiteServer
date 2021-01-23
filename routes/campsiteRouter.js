@@ -214,23 +214,23 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
                     res.setHeader("Content-Type", "application/json");
                     res.json(campsite);
                   })
-                  .catch((err) => next(err));
+                  .catch(err => next(err));
               } else {
                 err = new Error("You are not authorized to delete this comment!");
-                err.status = 403;
+                err.statusCode = 403;
                 return next(err);
               }
             } else if (!campsite) {
               err = new Error(`Campsite ${req.params.campsiteId} not found`);
-              err.status = 404;
+              err.statusCode = 404;
               return next(err);
             } else {
               err = new Error(`Comment ${req.params.commentId} not found`);
-              err.status = 404;
+              err.statusCode = 404;
               return next(err);
             }
           })
-          .catch((err) => next(err));
+          .catch(err => next(err));
       });
 
 module.exports = campsiteRouter;
